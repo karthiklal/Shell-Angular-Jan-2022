@@ -51,3 +51,65 @@
     */
     var add = (x,y) => x + y;
 
+11. object construction enhancement
+    var x = 100, y = 200
+    var obj = { x , y}
+
+12. template literal
+    var x = 10, y = 20
+    var s1 = 'sum of ' + x + ' and ' + y + ' is ' + (x+y)
+    var s2 = `sum of ${x} and ${y} is ${x+y}`
+
+    var s3 = `sum of
+        ${x} and ${y} 
+        is ${x+y}
+    `;
+
+13. for of
+    var nos = [3,1,4,2,5]
+    for (let no of nos)
+        console.log(no)
+
+14. class
+    class Employee{
+        id = 0;
+        name = '';
+        salary = 0;
+
+        constructor(id, name, salary){
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+        }
+
+        display(){
+            console.log(`id = ${this.id}, name = ${this.name} and salary = ${this.salary}`);
+        }
+    }
+
+15. class inheritance
+        class Employee{
+        id = 0;
+        name = '';
+        salary = 0;
+
+        constructor(id, name, salary){
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+        }
+
+        display(){
+            console.log(`id = ${this.id}, name = ${this.name} and salary = ${this.salary}`);
+        }
+    }
+    
+    class FulltimeEmployee extends Employee{
+        benefits = '';
+        constructor(id, name, salary, benefits){
+            super(id, name, salary);
+            this.benefits = benefits;
+        }
+    }
+    
+    var fte = new FulltimeEmployee(200, 'Suresh', 20000, 'Good food!')
