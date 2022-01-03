@@ -29,3 +29,5 @@ Assumption
     2. Refactoring the code to different files is taken care by the 'deployment' team
 
 https://github.com/tkmagesh/shell-angular-jan-2022
+
+Reactive X Proactive (Knowledge)
