@@ -49,7 +49,7 @@ Assignment
 
     1. Sort the products by cost (use 'sort()' method and arrow function)
     2. Filter all the stationary products (using 'filter()' method and arrow function)
-    3. Print the name and discounted price of each product (use 'forEach()' method and arrow function)
+    3. Print the name and discounted price (apply 10% discount) of each product (use 'forEach()' method and arrow function)
     4. Find the max cost among the products (use 'reduce()' method and arrow function)
     5. Find the total units of all the products (use 'reduce()' method and arrow function)
     6. Find the average cost of all the products (use 'reduce()' method and arrow function)
