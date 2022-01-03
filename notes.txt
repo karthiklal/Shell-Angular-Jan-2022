@@ -31,3 +31,28 @@ Assumption
 https://github.com/tkmagesh/shell-angular-jan-2022
 
 Reactive (Dumb) X Proactive (Knowledge)
+
+
+Assignment
+
+1. Convert the SalaryCalculatorModel into an ES6 class
+
+2. Given the below products:
+    var products = [
+        {id : 6, name : 'Pen', cost : 50, units : 20, category : 'stationary'},
+        {id : 9, name : 'Ten', cost : 70, units : 70, category : 'stationary'},
+        {id : 3, name : 'Len', cost : 60, units : 60, category : 'grocery'},
+        {id : 5, name : 'Zen', cost : 30, units : 30, category : 'grocery'},
+        {id : 1, name : 'Ken', cost : 20, units : 80, category : 'utencil'},
+        {id : 7, name : 'Mouse', cost : 100, units : 20, category : 'electronics'}
+    ];
+
+    1. Sort the products by cost (use 'sort()' method and arrow function)
+    2. Filter all the stationary products (using 'filter()' method and arrow function)
+    3. Print the name and discounted price of each product (use 'forEach()' method and arrow function)
+    4. Find the max cost among the products (use 'reduce()' method and arrow function)
+    5. Find the total units of all the products (use 'reduce()' method and arrow function)
+    6. Find the average cost of all the products (use 'reduce()' method and arrow function)
+    8. Group the products by category
+
+
