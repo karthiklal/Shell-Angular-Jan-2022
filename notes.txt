@@ -30,4 +30,4 @@ Assumption
 
 https://github.com/tkmagesh/shell-angular-jan-2022
 
-Reactive X Proactive (Knowledge)
+Reactive (Dumb) X Proactive (Knowledge)
