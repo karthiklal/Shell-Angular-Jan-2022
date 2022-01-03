@@ -113,3 +113,6 @@
     }
     
     var fte = new FulltimeEmployee(200, 'Suresh', 20000, 'Good food!')
+
+Reference:
+    http://es6-features.org

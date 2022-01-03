@@ -27,7 +27,7 @@
 
         //state & behavior
         //observable
-        function SalaryCalculatorModel(){
+        /* function SalaryCalculatorModel(){
             var _data = {
                 basic : 0,
                 hra : 0,
@@ -66,7 +66,49 @@
             var gross = this.get('basic') + this.get('hra') + this.get('da'),
                 net = gross * ((100-this.get('tax'))/100);
             this.set('salary', net);
-        };
+        }; */
+
+        class SalaryCalculatorModel {
+            _data = {
+                basic: 0,
+                hra: 0,
+                da: 0,
+                tax: 0,
+                salary: 0
+            };
+
+            _callbacks = {
+                basic: [],
+                hra: [],
+                da: [],
+                tax: [],
+                salary: []
+            };
+
+            get(attrName) {
+                return this._data[attrName];
+            }
+
+            set(attrName, value) {
+                this._data[attrName] = value;
+                const callbacks = this._callbacks[attrName];
+                callbacks.forEach(callback => {
+                    if (typeof callback === 'function')
+                        callback();
+                })
+            }
+
+            subscribe(attrName, callbackFn) {
+                this._callbacks[attrName].push(callbackFn);
+            }
+
+            calculate = function () {
+                const gross = this.get('basic') + this.get('hra') + this.get('da'),
+                    net = gross * ((100 - this.get('tax')) / 100);
+                this.set('salary', net);
+            }
+
+        }
 
         //View
         // Encapsulation of Presentation (template) + Reacting to User actions + Synchronize the presentation with model changes (Reacting to model changes)
