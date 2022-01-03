@@ -1,0 +1,31 @@
+Magesh Kuppan
+
+Methodology:
+    100% Hands on
+    No powerpoint
+
+Schedule:
+    Commence    : 9:30 AM
+    Tea Break   : 11:00 AM (20 mins)
+    Lunch Break : 1:00 PM (1 hr)
+    Tea Break   : 3:30 PM (20 mins)
+    Wind up     : 5:30 PM 
+
+About You:
+    Name
+    Total Experience
+    Primary Skillset
+    Experience in Angular ( if any )
+
+What is Angular?
+    Angular is a framework for building Rich Internet Applications
+
+
+Salary Calculator
+    Net = Basic + HRA + DA - Tax(%)
+
+Assumption
+    1. The implementation meets 100% of the user requirements. (Validations are not needed)
+    2. Refactoring the code to different files is taken care by the 'deployment' team
+
+https://github.com/tkmagesh/shell-angular-jan-2022
