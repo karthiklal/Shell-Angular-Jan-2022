@@ -6,9 +6,9 @@ import { Component } from "@angular/core";
     styleUrls : ['greeter.component.css']
 })
 export class GreeterComponent{
-    message : string = '[Default greet message]';
+    message = '[Default greet message]';
 
-    onBtnGreetClick(){
-        this.message = 'greet button clicked';
+    onBtnGreetClick(userName : string){
+        this.message = `Hi ${userName}, Have a nice day!`;
     }
 }
