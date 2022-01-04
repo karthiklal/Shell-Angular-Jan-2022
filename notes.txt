@@ -56,3 +56,157 @@ Assignment
     8. Group the products by category
 
 
+TypeScript
+
+JavaScript is a loosely type language
+
+var x;
+x = 10;
+x = 'Hello';
+x = true;
+x = {};
+x = [];
+
+In C#:
+int x;
+
+var x = 100; //=> implicitly typed local variables
+
+
+
+function add(x,y){
+    return x + y
+}
+
+function add(x,y){
+    if (typeof x !== 'number' || typeof y !== 'number'){
+        throw new Error('Invalid Input');
+    }
+    return x + y;
+}
+
+add(10,20);
+add(10, "20");
+add(10, "abc")
+add([10,20],[30,40])
+add([10,20],[30,"40"])
+add([10,20],[30,"40","abc"])
+add([10,20],[30,["40","abc"]])
+add(10)
+add()
+add(10,20,30,40,50)
+add(function(){ return 10;})
+add(function(){ return [10,20]; }, function(){ return [30,["40","abc"]]; })
+add([function(){ return [10,20]; }, function(){ return [30,["40","abc"]]; }])
+
+function add(...args){
+    function parseArg(n){
+        if (Array.isArray(n)) return add(...n);
+        if (typeof n === 'function') return parseArg(n());
+        return isNaN(n) ? 0 : parseInt(n)
+    }
+    return args.length <= 1 ? parseArg(args[0]) : parseArg(args[0]) + add(args.slice(1))
+}
+
+TypeScript = JavaScript + Type Safety
+
+var x : number;
+
+function add(x : number, y : number) : number {  
+    return x + y;
+}
+
+add(10, "abc")
+        |
+        |
+        V
+    typescript compiler
+        |
+        |
+        V
+function add(x, y) {  
+    return x + y;
+}
+
+1. Access modifiers (public, private, protected)
+2. Class
+3. Arrow functions
+4. Interfaces
+5. Enums
+6. Generics
+
+http://typescriptlang.org
+
+
+
+
+var nos : Array<number> = []
+nos.push(10);
+nos.push("abc");
+
+Angular
+    Framework for building RIA/SPA applications
+
+Building Blocks 
+    1. Component
+        Encapsulation of Presenation (html + css) + UI Behavior (User interaction events) + State
+        Components can be composed together
+        App UI = is just one big component
+    2. Directive
+        DOM Manipulations
+    3. Pipe
+        Data Transformation for presentation
+    4. Service
+        Non UI responsibilities
+    5. Module
+        Registry of application entities (Components, Directives, Pipes, Services etc)
+        There has to be a minimum of 1 module in the application
+        A module is the 'starting point' of the application
+
+            declaration => register all UI entites (Component, Directive & Pipe)
+            providers => register all non-ui entities (Services)
+            imports => register all other dependent modules
+            bootstrap => register the top-most components
+
+Angular CLI
+    To Install
+        npm install -g @angular/cli
+
+
+
+NPM (Node Package Manager)
+
+Python - PIP
+.NET - NuGet
+Java - Maven
+Ruby - Gem
+
+To create the application
+    ng new <app-name>
+
+Package.json
+    Metadata information about the application
+        Name
+        Version
+        Description
+        Author
+        License
+        Repository
+        Dependencies (runtime dependencies)
+            angular framework packages
+        devDependencies (dependencies for performing development activities)
+            typescript compiler
+            testing tools
+            build tools
+            static code analysis tools
+        scripts
+            configure the 'commands' to perform the development activities on the code base
+
+To run the application
+    cd <app-name>
+    npm start
+
+ES6 Modules
+    1. Everything defined in a file is considered 'private'
+    2. All entities that are to be exposed as 'public' have to be explicitly 'exported'
+    3. All public entities from other files have to be explicitly 'imported' for use
