@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   /* register all UI entities (components, directives, & pipes) */
   declarations: [
     AppComponent,
-    GreeterComponent
+    GreeterComponent,
+    SpinnerComponent
   ],
   /* register other dependent modules */
   imports: [

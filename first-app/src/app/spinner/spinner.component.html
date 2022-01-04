@@ -1,0 +1,7 @@
+<h3>Spinner</h3>
+<label for="">Delta : </label>
+<input type="number" (input)="delta = $any($event.target).value"/>
+<br/>
+<button (click)="onBtnDecrementClick()">Decrement</button>
+<span> [ {{value}} ] </span>
+<button (click)="onBtnIncrementClick()">Increment</button>
