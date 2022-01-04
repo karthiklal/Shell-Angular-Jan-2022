@@ -1,0 +1,8 @@
+<h3>Products</h3>
+<label>Product Name : </label>
+<input type="text" />
+<button>Add New</button>
+<ul>
+    <li *ngFor="let productName of productNames">{{productName}}</li>
+</ul>
+<div *ngIf="productNames.length === 0">No products found!</div>

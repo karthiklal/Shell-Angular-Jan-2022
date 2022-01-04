@@ -210,3 +210,19 @@ ES6 Modules
     1. Everything defined in a file is considered 'private'
     2. All entities that are to be exposed as 'public' have to be explicitly 'exported'
     3. All public entities from other files have to be explicitly 'imported' for use
+
+
+Directives
+    - attribute directive
+        manipulates the attributes of an 'existing' dom node
+        does NOT change the structure of the DOM tree (by adding or removing dom nodes)
+        used with the '[]' syntax
+
+    - structural directive
+        changes the structure of the DOM tree by adding or removing dom nodes
+        used with the '*' prefix
+
+
+Assignments:
+    1. Enable the user to dynamically add products (products component)
+    2. Create a 'SalaryCalculator' component 

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   /* register all UI entities (components, directives, & pipes) */
@@ -12,7 +13,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
     AppComponent,
     GreeterComponent,
     SpinnerComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    ProductsComponent
   ],
   /* register other dependent modules */
   imports: [
