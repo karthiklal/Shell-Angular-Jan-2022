@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'first-app';
   authorName = "Magesh";
+
+  constructor(){
+    setTimeout(() => {
+      this.title = "Angular App";
+      this.authorName = "Suresh Kumar";
+    }, 5000);
+  }
 }
