@@ -15,4 +15,8 @@ export class SalaryCalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onBtnCalculateClick(){
+    this.model.calculate();
+  }
+
 }

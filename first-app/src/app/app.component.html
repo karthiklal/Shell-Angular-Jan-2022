@@ -1,7 +1,24 @@
 <h1>First Angular App</h1>
 <hr/>
-<app-salary-calculator></app-salary-calculator>
-<app-products></app-products>
-<app-greeter></app-greeter>
-<app-spinner></app-spinner>
-<app-calculator></app-calculator>
+ <button (click)="userChoice='SalaryCalculator'">Salary Calculator</button>
+ <button (click)="userChoice='Products'">Products</button>
+ <button (click)="userChoice='Greeter'">Greeter</button>
+ <button (click)="userChoice='Spinner'">Spinner</button>
+ <button (click)="userChoice='Calculator'">Calculator</button>
+
+
+<!-- 
+    <app-salary-calculator *ngIf="userChoice === 'SalaryCalculator'"></app-salary-calculator>
+    <app-products *ngIf="userChoice === 'Products'"></app-products>
+    <app-greeter *ngIf="userChoice === 'Greeter'"></app-greeter>
+    <app-spinner *ngIf="userChoice === 'Spinner'"></app-spinner>
+    <app-calculator *ngIf="userChoice === 'Calculator'"></app-calculator> 
+-->
+
+<div [ngSwitch]="userChoice">
+    <app-salary-calculator *ngSwitchCase="'SalaryCalculator'"></app-salary-calculator>
+    <app-products *ngSwitchCase="'Products'"></app-products>
+    <app-greeter *ngSwitchCase="'Greeter'"></app-greeter>
+    <app-spinner *ngSwitchCase="'Spinner'"></app-spinner>
+    <app-calculator *ngSwitchCase="'Calculator'"></app-calculator>
+</div>

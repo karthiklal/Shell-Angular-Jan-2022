@@ -9,6 +9,8 @@ export class AppComponent {
   title = 'first-app';
   authorName = "Magesh";
 
+  userChoice = '';
+  
   constructor(){
     setTimeout(() => {
       this.title = "Angular App";
