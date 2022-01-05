@@ -14,4 +14,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onBtnAddNewClick(newProductName : string){
+    this.productNames.push(newProductName);
+  }
 }
