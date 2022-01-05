@@ -17,4 +17,8 @@ export class ProductsComponent implements OnInit {
   onBtnAddNewClick(newProductName : string){
     this.productNames.push(newProductName);
   }
+
+  onBtnRemoveClick(productName : string){
+    this.productNames.splice(this.productNames.indexOf(productName), 1);
+  }
 }
