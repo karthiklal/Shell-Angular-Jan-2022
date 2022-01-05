@@ -226,3 +226,24 @@ Directives
 Assignments:
     1. Enable the user to dynamically add products (products component)
     2. Create a 'SalaryCalculator' component 
+
+
+Dependency Inversion Principle
+    Dependencies should NOT BE created and used in the same place
+    Dependency Creation should be seperated from Usage
+
+
+Agile Principles Patterns & Practices
+    SOLID
+        Single Responsibility Principle
+        Open/Closed Principle
+        Liskov Substitution Principle
+        Interface Segregation Principle
+        Dependency Inversion Principle
+
+        
+Structure and Interpretation of Computer Programs (SICP)
+Growing Object Oriented Software Guided By Tests
+Refactoring
+Refactoring to Patterns
+

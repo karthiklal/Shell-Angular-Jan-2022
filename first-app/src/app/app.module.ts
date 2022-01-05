@@ -7,6 +7,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ProductsComponent } from './products/products.component';
 import { SalaryCalculatorComponent } from './salary-calculator/salary-calculator.component';
+import { SalaryCalculatorModel } from './salary-calculator/salary-calculator-model';
 
 @NgModule({
   /* register all UI entities (components, directives, & pipes) */
@@ -23,7 +24,9 @@ import { SalaryCalculatorComponent } from './salary-calculator/salary-calculator
     BrowserModule
   ],
   /* register all non-ui entites (services) */
-  providers: [],
+  providers: [
+    SalaryCalculatorModel
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
