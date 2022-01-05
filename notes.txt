@@ -247,3 +247,22 @@ Growing Object Oriented Software Guided By Tests
 Refactoring
 Refactoring to Patterns
 
+
+Assignment (Day-3)
+9. Persist the bugs in the browser storage (window.localStorage)
+
+window.localStorage
+    - Persistent storage
+    - key/value store
+    - key has to be unique
+    - key & value must be strings
+        use JSON.stringify() & JSON.parse() for serialization & deserialization respectively
+    - security is taken care by SOP (Same Origin Policy)
+    - use this storage feature ONLY for data that the application can afford to loose
+    - APIs
+        - setItem(key, value)   // => insert OR update the key & value
+        - getItem(key)          // => return value for the given key
+        - removeItem(key)       // => remove the key & value from the storage
+        - clear()               // => remove all the key & values
+        - key(index)            // => key at index
+        - length                // => # of key/value pairs in the storage
