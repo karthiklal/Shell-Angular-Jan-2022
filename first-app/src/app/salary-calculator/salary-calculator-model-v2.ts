@@ -1,11 +1,4 @@
-/* import { Injectable } from "@angular/core";
-
-@Injectable({
-    providedIn: "root"
-}) 
-*/
-
-export class SalaryCalculatorModel{
+export class SalaryCalculatorModelV2{
     basic : number = 0;
     hra : number = 0;
     da : number = 0;
@@ -14,7 +7,7 @@ export class SalaryCalculatorModel{
     
     calculate(){
         const gross = this.basic + this.hra + this.da,  
-            net = gross - (gross * this.tax / 100);
+            net = gross - (gross * (this.tax + 10) / 100);
         this.salary = net;
     }
 }
