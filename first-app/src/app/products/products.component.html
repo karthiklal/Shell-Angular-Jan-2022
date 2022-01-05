@@ -5,7 +5,7 @@
 <ul>
     <li *ngFor="let productName of productNames">
         <div>
-            <span>{{productName}}</span>
+            <span>{{productName | uppercase}}</span>
             <span> - </span>
             <button (click)="onBtnRemoveClick(productName)"> X </button>
         </div>
