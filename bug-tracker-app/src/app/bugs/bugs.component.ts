@@ -8,7 +8,15 @@ import { Bug } from './models/bug';
 })
 export class BugsComponent implements OnInit {
 
-  bugs : Array<Bug> = [];
+  bugs : Array<Bug> = [
+    {id : 10, name : 'Server communication failure', isClosed : false, createdAt : new Date()},
+    {id : 11, name : 'User access denied', isClosed : true, createdAt : new Date()},
+    {id : 12, name : 'Data integrity checks failed', isClosed : false, createdAt : new Date()},
+    {id : 13, name : 'Application not responding', isClosed : true, createdAt : new Date()},
+  ];
+  
+  sortAttr : string = '';
+  sortDesc : boolean = false;
   
   private _currentBugId : number = 0;
 
