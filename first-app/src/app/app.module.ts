@@ -25,7 +25,7 @@ import { SalaryCalculatorModel } from './salary-calculator/salary-calculator-mod
   ],
   /* register all non-ui entites (services) */
   providers: [
-    SalaryCalculatorModel
+    /* SalaryCalculatorModel */
   ],
   bootstrap: [AppComponent]
 })
