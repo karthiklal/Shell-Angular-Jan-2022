@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Bug } from './models/bug';
 import { BugOperationsService } from './services/bugOperations.service';
+import { BugStorageService } from './services/bugStorage.service';
 
 @Component({
   selector: 'app-bugs',
@@ -14,48 +15,42 @@ export class BugsComponent implements OnInit {
   sortAttr : string = '';
   sortDesc : boolean = false;
   
-  private storage : Storage = window.localStorage;
-
-  constructor(private bugOperations : BugOperationsService) {
+  constructor(
+    private bugOperations : BugOperationsService,
+    private bugStorage : BugStorageService
+    ) {
 
   }
 
   ngOnInit(): void {
-    for(let index=0; index < this.storage.length; index++){
-      let key = this.storage.key(index) || '',
-        data = this.storage.getItem(key) || '',
-        bug = JSON.parse(data);
-        this.bugs.push(bug);
-        this._currentBugId = this._currentBugId > bug.id ? this._currentBugId : bug.id;
-    }
+    this.bugs = this.bugStorage.getAll();
   }
 
   onBtnAddNewClick(newBugName : string){
     const newBug = this.bugOperations.createNew(newBugName);
-    this.storage.setItem(newBug.id.toString(), JSON.stringify(newBug));
+    this.bugStorage.save(newBug);
     this.bugs.push(newBug);
   }
 
   onBtnRemoveClick(bugToRemove : Bug){
-    this.storage.removeItem(bugToRemove.id.toString());
+    this.bugStorage.remove(bugToRemove);
     this.bugs.splice(this.bugs.indexOf(bugToRemove), 1);
   }
 
   onBugNameClick(bugToToggle : Bug){
     this.bugOperations.toggle(bugToToggle);
-    this.storage.setItem(bugToToggle.id.toString(), JSON.stringify(bugToToggle));
+    this.bugStorage.save(bugToToggle);
   }
 
   onBtnRemoveClosedClick(){
     const closedBugs = this.bugs.filter(bug => bug.isClosed);
     closedBugs.forEach(bug => {
-      this.storage.removeItem(bug.id.toString())
+      this.bugStorage.remove(bug);
       this.bugs.splice(this.bugs.indexOf(bug), 1);
     });
   }
 
   getClosedCount(): number {
-    //return this.bugs.filter(bug => bug.isClosed).length;
     return this.bugs.reduce((result, bug) => bug.isClosed ? ++result : result, 0);
   }
 }
