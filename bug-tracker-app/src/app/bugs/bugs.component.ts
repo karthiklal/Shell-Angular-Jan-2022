@@ -10,13 +10,13 @@ import { BugStorageService } from './services/bugStorage.service';
 })
 export class BugsComponent implements OnInit {
 
-  bugs : Array<Bug> = [];
+ 
   
   sortAttr : string = '';
   sortDesc : boolean = false;
   
   constructor(
-    private bugOperations : BugOperationsService
+    public bugOperations : BugOperationsService
     ) {
 
   }
@@ -41,7 +41,5 @@ export class BugsComponent implements OnInit {
     this.bugOperations.removeClosed()
   }
 
-  getClosedCount(): number {
-    return this.bugs.reduce((result, bug) => bug.isClosed ? ++result : result, 0);
-  }
+  
 }
