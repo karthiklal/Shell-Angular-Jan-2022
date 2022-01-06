@@ -16,36 +16,32 @@ export class BugsComponent implements OnInit {
   sortDesc : boolean = false;
   
   constructor(
-    private bugOperations : BugOperationsService,
-    private bugStorage : BugStorageService
+    private bugOperations : BugOperationsService
     ) {
 
   }
 
   ngOnInit(): void {
-    this.bugs = this.bugStorage.getAll();
+    this.bugOperations.getAll();
   }
 
   onBtnAddNewClick(newBugName : string){
-    const newBug = this.bugOperations.createNew(newBugName);
-    this.bugStorage.save(newBug);
-    this.bugs.push(newBug);
+    this.bugOperations.createNew(newBugName);
   }
 
   onBtnRemoveClick(bugToRemove : Bug){
-    this.bugStorage.remove(bugToRemove);
+    this.bugOperations.remove(bugToRemove);
     this.bugs.splice(this.bugs.indexOf(bugToRemove), 1);
   }
 
   onBugNameClick(bugToToggle : Bug){
     this.bugOperations.toggle(bugToToggle);
-    this.bugStorage.save(bugToToggle);
   }
 
   onBtnRemoveClosedClick(){
     const closedBugs = this.bugs.filter(bug => bug.isClosed);
     closedBugs.forEach(bug => {
-      this.bugStorage.remove(bug);
+      this.bugOperations.remove(bug);
       this.bugs.splice(this.bugs.indexOf(bug), 1);
     });
   }
