@@ -22,7 +22,7 @@ export class BugsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.bugOperations.getAll();
+    this.bugOperations.load();
   }
 
   onBtnAddNewClick(newBugName : string){
@@ -31,7 +31,6 @@ export class BugsComponent implements OnInit {
 
   onBtnRemoveClick(bugToRemove : Bug){
     this.bugOperations.remove(bugToRemove);
-    this.bugs.splice(this.bugs.indexOf(bugToRemove), 1);
   }
 
   onBugNameClick(bugToToggle : Bug){
@@ -39,11 +38,7 @@ export class BugsComponent implements OnInit {
   }
 
   onBtnRemoveClosedClick(){
-    const closedBugs = this.bugs.filter(bug => bug.isClosed);
-    closedBugs.forEach(bug => {
-      this.bugOperations.remove(bug);
-      this.bugs.splice(this.bugs.indexOf(bug), 1);
-    });
+    this.bugOperations.removeClosed()
   }
 
   getClosedCount(): number {
