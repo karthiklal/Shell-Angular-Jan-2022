@@ -1,0 +1,11 @@
+<h3>Projects</h3>
+<hr>
+<label for="">Project Name :</label>
+<input type="text" #txtNewProjectName>
+<button (click)="onBtnAddNewClick(txtNewProjectName.value)">Add New</button>
+<ol>
+    <li *ngFor="let project of projects">
+        <span> {{project.name}} </span>
+        <button (click)="onBtnRemoveClick(project)"> X </button>
+    </li>
+</ol>
