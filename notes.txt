@@ -266,3 +266,38 @@ window.localStorage
         - clear()               // => remove all the key & values
         - key(index)            // => key at index
         - length                // => # of key/value pairs in the storage
+
+
+Async Operations:
+    1. Callbacks
+    2. Events
+    3. Promises
+    4. Async Await
+    5. ES6 Generations
+    6. Observables
+
+Observable
+    object that respresents a stream of events
+
+Server communication
+    HttpClientModule -> @angular/common/http 
+    HttpClient
+        - get => Observable
+        - post => Observable
+        - put => Observable
+        - patch => Observable
+        - delete => Observable
+
+    const observable = this.http.get(url);
+    observable.subscribe(
+        data => {
+            console.log(data);
+        },
+        error => {
+            console.log(error);
+        }
+    );
+
+
+JSON Server (command line tool)
+    Serve the data from a .json file as restful service
