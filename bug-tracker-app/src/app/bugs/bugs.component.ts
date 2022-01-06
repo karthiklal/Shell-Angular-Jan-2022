@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Bug } from './models/bug';
+import { BugOperationsService } from './services/bugOperations.service';
 
 @Component({
   selector: 'app-bugs',
@@ -15,9 +16,9 @@ export class BugsComponent implements OnInit {
   
   private storage : Storage = window.localStorage;
 
-  private _currentBugId : number = 0;
+  constructor(private bugOperations : BugOperationsService) {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
     for(let index=0; index < this.storage.length; index++){
@@ -30,12 +31,7 @@ export class BugsComponent implements OnInit {
   }
 
   onBtnAddNewClick(newBugName : string){
-    const newBug : Bug = {
-      id : ++this._currentBugId,
-      name : newBugName,
-      isClosed : false,
-      createdAt : new Date()
-    };
+    const newBug = this.bugOperations.createNew(newBugName);
     this.storage.setItem(newBug.id.toString(), JSON.stringify(newBug));
     this.bugs.push(newBug);
   }
@@ -46,7 +42,7 @@ export class BugsComponent implements OnInit {
   }
 
   onBugNameClick(bugToToggle : Bug){
-    bugToToggle.isClosed = !bugToToggle.isClosed;
+    this.bugOperations.toggle(bugToToggle);
     this.storage.setItem(bugToToggle.id.toString(), JSON.stringify(bugToToggle));
   }
 
