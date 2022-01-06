@@ -25,8 +25,8 @@ export class BugsComponent implements OnInit {
     this.bugOperations.load();
   }
 
-  onBtnAddNewClick(newBugName : string){
-    this.bugOperations.createNew(newBugName);
+  onNewBugCreated(){
+    console.log('a new bug is being created');
   }
 
   onBtnRemoveClick(bugToRemove : Bug){

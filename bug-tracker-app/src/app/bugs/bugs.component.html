@@ -11,11 +11,7 @@
     <label for="">Descending ? :</label>
     <input type="checkbox" (change)="sortDesc = $any($event.target).checked">
 </section>
-<section class="edit">
-    <label for="">Bug Name :</label>
-    <input type="text" #txtNewBugName>
-    <button (click)="onBtnAddNewClick(txtNewBugName.value)">Add New</button>
-</section>
+<app-bug-edit (onNewBug)="onNewBugCreated()"></app-bug-edit>
 <section class="list">
     <ol>
         <li *ngFor="let bug of ( bugOperations.bugs | sort:sortAttr:sortDesc) ">
