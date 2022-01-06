@@ -1,5 +1,5 @@
 <section class="stats">
-    <span class="closed">{{ bugOperations.getClosedCount() }}</span>
+    <span class="closed">{{ bugOperations.bugs | closedCount }}</span>
     <span> / </span>
     <span>{{bugOperations.bugs.length}}</span>
 </section>
@@ -35,6 +35,5 @@
     </ol>
     <button 
         (click)="onBtnRemoveClosedClick()"
-        *ngIf="bugOperations.getClosedCount() > 0"
     >Remove Closed</button>
 </section>

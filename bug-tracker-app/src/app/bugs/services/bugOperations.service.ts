@@ -49,7 +49,4 @@ export class BugOperationsService{
         this.bugs = this.bugStorage.getAll()
     }
 
-    getClosedCount(): number {
-        return this.bugs.reduce((result, bug) => bug.isClosed ? ++result : result, 0);
-    }
 }
