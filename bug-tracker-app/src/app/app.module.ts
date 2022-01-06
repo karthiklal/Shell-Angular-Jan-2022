@@ -9,6 +9,8 @@ import { BugEditComponent } from './bugs/components/bug-edit/bug-edit.component'
 /* import { SortPipe } from './bugs/pipes/sort.pipe';
 import { TrimTextPipe } from './bugs/pipes/trimText.pipe'; */
 import { TrimTextPipe, SortPipe } from './bugs/pipes';
+import { ElapsedPipe } from './bugs/pipes/elapsed.pipe';
+
 import { ClosedCountPipe } from './bugs/pipes/closedCount.pipe';
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { ClosedCountPipe } from './bugs/pipes/closedCount.pipe';
     BugsComponent,
     TrimTextPipe,
     SortPipe,
+    ElapsedPipe,
     ClosedCountPipe,
     BugStatsComponent,
     BugEditComponent,

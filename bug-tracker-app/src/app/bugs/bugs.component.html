@@ -22,7 +22,9 @@
                 >
                 {{bug.name | trimText:40}}
             </span>
-            <div class="datetime">[Created At]</div>
+            <div class="datetime" [title]="bug.createdAt">
+                {{bug.createdAt | elapsed}}
+            </div>
             <button (click)="onBtnRemoveClick(bug)">Remove</button>
         </li>
     </ol>
