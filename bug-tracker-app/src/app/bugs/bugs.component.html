@@ -1,4 +1,8 @@
 <!-- BugStats component -->
+<div>
+    <button (click)="onBtnChangeSource(bugStorageType.Server)">Server</button>
+    <button (click)="onBtnChangeSource(bugStorageType.Local)">Local</button>
+</div>
 <app-bug-stats [bugs]="bugOperations.bugs"></app-bug-stats>
 <section class="sort">
     <label for="">Order By :</label>

@@ -11,7 +11,8 @@ import { ClosedCountPipe } from './bugs/pipes/closedCount.pipe';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ProjectsComponent } from './projects/projects.component';
-
+import { BugOperationsService } from './bugs/services/bugOperations.service'
+import { BugServerOperationsService } from './bugs/services/bugServerOperations.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,9 @@ import { ProjectsComponent } from './projects/projects.component';
     UtilsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
