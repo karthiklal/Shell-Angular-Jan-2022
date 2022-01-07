@@ -10,8 +10,6 @@ import { BugStorageService } from './services/bugStorage.service';
 })
 export class BugsComponent implements OnInit {
 
- 
-  
   sortAttr : string = '';
   sortDesc : boolean = false;
   
