@@ -18,13 +18,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { PathNotFoundComponent } from './pathNotFound.component';
 import { HomeComponent } from './home.component';
 import { BugDetailsComponent } from './bugs/components/bug-details/bug-details.component';
+import { LoggedInGuard } from './auth/loggedInGuard';
+import { LoginComponent } from './auth/login.component';
 
 let routes : Routes = [
   {path : '', component : HomeComponent},
-  {path : 'bugs', component : BugsComponent },
+  {path : 'bugs', component : BugsComponent, canActivate : [LoggedInGuard] },
   {path : 'projects', component : ProjectsComponent},
   {path : 'add', component : BugEditComponent},
   {path : 'details/:id', component : BugDetailsComponent},
+  {path : 'login', component : LoginComponent},
   {path : '**', component : PathNotFoundComponent },
 ];
 
@@ -39,6 +42,7 @@ let routes : Routes = [
     ProjectsComponent,
     PathNotFoundComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
