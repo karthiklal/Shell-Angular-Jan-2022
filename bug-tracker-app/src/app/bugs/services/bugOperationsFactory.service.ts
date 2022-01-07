@@ -18,9 +18,9 @@ export class BugOperationsFactoryService{
     }
     getService(storageType : StorageType) : BugOperationsInterface{
         if (storageType === StorageType.Local){
-            return this.bugOperations
+            return this.bugOperations;
         } else {
-            return this.bugServerOperations
+            return this.bugServerOperations;
         }
     }
 }

@@ -13,6 +13,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProjectsComponent } from './projects/projects.component';
 import { BugOperationsService } from './bugs/services/bugOperations.service'
 import { BugServerOperationsService } from './bugs/services/bugServerOperations.service';
+
+import { RouterModule, Routes } from '@angular/router';
+import { PathNotFoundComponent } from './pathNotFound.component';
+import { HomeComponent } from './home.component';
+
+let routes : Routes = [
+  {path : '', component : HomeComponent},
+  {path : 'bugs', component : BugsComponent },
+  {path : 'projects', component : ProjectsComponent},
+  {path : '**', component : PathNotFoundComponent },
+];
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +33,15 @@ import { BugServerOperationsService } from './bugs/services/bugServerOperations.
     ClosedCountPipe,
     BugStatsComponent,
     BugEditComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    PathNotFoundComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     UtilsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     

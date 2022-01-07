@@ -301,3 +301,37 @@ Server communication
 
 JSON Server (command line tool)
     Serve the data from a .json file as restful service
+
+Routing
+https://www.amazon.in
+https://www.amazon.in/electronics
+https://www.amazon.in/electronics/mobile-phones
+https://www.amazon.in/electronics/mobile-phones/google
+https://www.amazon.in/electronics/mobile-phones/google/pixel-5
+
+https://www.amazon.in/electronics/mobile-phones/google/pixel-5/reviews => bookmark
+
+
+
+Outlook
+Outlook/inbox
+Outlook/inbox/projects
+Outlook/inbox/projects/bug-tracker
+Outlook/inbox/projects/bug-tracker/bugs
+
+Outlook/inbox/projects/bug-tracker/bugs/bug-101
+
+
+http://localhost:4200/salary-calculator
+
+http://localhost:4200/greeter
+http://localhost:4200/calculator
+
+
+go to http://localhost:4200
+    click "Salary Calculator" button
+
+
+All the modules of the application has to accessed using unique urls (bookmarkable)
+
+http://localhost:4200
