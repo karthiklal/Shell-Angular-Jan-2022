@@ -335,3 +335,28 @@ go to http://localhost:4200
 All the modules of the application has to accessed using unique urls (bookmarkable)
 
 http://localhost:4200
+
+Validations
+    visited?
+    attempted to change the data?
+    data is valid? (type of validation)
+
+When to display the error message?
+    if (!visited)
+        dont display the error message
+    else 
+        if (!attemptedToChangeData)
+            dont display the error message
+        else
+            if (!dataIsValid)
+                display the error message
+            else
+                dont display the error message
+
+
+    form control
+        isPristine
+        isValid
+        isInvalid
+        isDirty
+        isTouched
