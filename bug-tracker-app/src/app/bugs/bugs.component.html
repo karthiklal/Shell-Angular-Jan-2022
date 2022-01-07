@@ -1,6 +1,10 @@
 <!-- BugStats component -->
 <h3>Bugs</h3>
+<div>
+    <span> [ <a [routerLink]="['/add']">Create New</a> ]</span>
+</div>
 <hr/>
+
 <div>
     <button (click)="onBtnChangeSource(bugStorageType.Server)">Server</button>
     <button (click)="onBtnChangeSource(bugStorageType.Local)">Local</button>
@@ -17,7 +21,6 @@
     <label for="">Descending ? :</label>
     <input type="checkbox" (change)="sortDesc = $any($event.target).checked">
 </section>
-<app-bug-edit (onNewBug)="onNewBugCreated($event)"></app-bug-edit>
 <section class="list">
     <ol>
         <li *ngFor="let bug of ( bugOperations.bugs | sort:sortAttr:sortDesc) ">
@@ -32,6 +35,9 @@
                 {{bug.createdAt | elapsed}}
             </div>
             <button (click)="onBtnRemoveClick(bug)">Remove</button>
+            <div>
+                <a [routerLink]="['/details', bug.id]">More...</a>
+            </div>
         </li>
     </ol>
     <button 

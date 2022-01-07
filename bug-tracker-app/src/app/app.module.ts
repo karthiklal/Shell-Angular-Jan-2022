@@ -17,11 +17,14 @@ import { BugServerOperationsService } from './bugs/services/bugServerOperations.
 import { RouterModule, Routes } from '@angular/router';
 import { PathNotFoundComponent } from './pathNotFound.component';
 import { HomeComponent } from './home.component';
+import { BugDetailsComponent } from './bugs/components/bug-details/bug-details.component';
 
 let routes : Routes = [
   {path : '', component : HomeComponent},
   {path : 'bugs', component : BugsComponent },
   {path : 'projects', component : ProjectsComponent},
+  {path : 'add', component : BugEditComponent},
+  {path : 'details/:id', component : BugDetailsComponent},
   {path : '**', component : PathNotFoundComponent },
 ];
 
